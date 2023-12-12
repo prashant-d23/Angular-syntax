@@ -1,0 +1,92 @@
+<!--  1. [ngStyle] -->
+
+<div class="main" [ngClass]="isChanged ? 'black':''">
+  <!-- <div class="main" [ngStyle]="{'background-color' : isChanged ? 'black' : ''}"> -->
+  <!-- <div class="main" [style.background]="isChanged ? 'black':''"> -->
+  <div class="button">
+    <button class="btn btn-primary" (click)="changeBg()">Change BG</button>
+  </div>
+  </div>
+  <!-- isChanged:boolean = false;
+  black:string = 'black'
+
+  changeBg(){
+    this.isChanged = !this.isChanged
+  } -->
+<!-- a. Using an object: -->
+<!-- Apply styles using an object where keys are CSS properties and values are their corresponding values. -->
+
+<div [ngStyle]="{color : 'red', 'font-size' : '14px'}">test</div>
+
+<!-- Using component properties:
+Apply styles based on properties from the component. -->
+
+<div [ngStyle]="{'background-color' : bgColor, 'border' : borderWidth + 'px solid black'}">Styled Text</div>
+
+<!-- =========================================== -->
+<!-- 2.ngClass Syntaxes: -->
+
+<!--a. Using a string directly:
+Apply classes using a string containing one or more class names. -->
+
+<div [ngClass]="'highlighted warning'">styled test</div> //this is a class
+
+<!-- b.Using an array:
+Apply classes using an array of class names. -->
+
+<div [ngClass]="['highlighted','warning']">styled text</div>
+
+<!-- c.Using an object:
+Apply classes using an object where keys are class names and values are boolean conditions. -->
+
+<div [ngClass]="{'highlighted' : isHighlighted, 'warning' : hasWarning}">Styled text</div>
+
+<!-- d.Using multiple classes with conditions:
+Combine classes dynamically based on conditions. -->
+
+<div [ngClass]="[isSpecial ? 'special' : '', isImportant ? 'important' : '']"></div>
+
+<!-- e.Using an array of objects:
+Apply classes using an array of objects, where each object specifies class names based on conditions. -->
+<div [ngClass]="[
+   { 'highlighted': isHighlighted, 'warning': hasWarning },
+   { 'special': isSpecial, 'important': isImportant }
+]">Styled Text</div>
+
+
+<!-- Using a function:
+Apply classes using a function that returns a string or an array of class names. -->
+<div [ngClass]="getClassNames()">Styled Text</div>
+
+<!-- ts file
+getClassNames() {
+  return this.isHighlighted ? 'highlighted' : 'normal';
+}
+ -->
+
+
+
+
+
+ <!-- ng style  -->
+<div class="container mt-5 w-50 border p-5">
+    <h2 [ngStyle]="{color : 'red', 'font-size' : '20px', border : '1px solid red', padding : '10px'}">This is Normal Text</h2>
+    <h2 [ngStyle]="{'background-color' : bgColor}">This is Another Heading</h2>
+    </div>
+    
+    <!-- ng class  -->
+    <div class="container mt-5 w-50 border p-5">
+    
+      <h2 [ngClass]="'highlighted warning'">This is ng Class Styling </h2>
+    
+      <h2 [ngClass]="['highlighted','warning']">This is ng Class styling</h2>
+    
+      <!-- using flags  -->
+      <h2 [ngClass]="{'highlighted' : isHighlighted, 'warning' : hasWarned}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, facilis?</h2>
+      <button class="btn btn-primary mt-3" (click)="toggleClass()">Toggle</button>
+    
+    <!-- using ternary operator  -->
+    <h2 [ngClass]="[isSpecial ? 'special' : '']">This is a heading using ternary operator</h2>
+    <h2 [ngClass]="getClass()">This is a heading using ternary operator</h2>
+    
+    </div>

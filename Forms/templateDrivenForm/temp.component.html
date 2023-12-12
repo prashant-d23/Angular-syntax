@@ -1,0 +1,114 @@
+<div class="container mt-3 mb-3 shadow p-4 bg">
+
+    <h3 class="text-center text-danger fw-bold mb-2">Template Driven Form</h3>
+  
+    <form #logInForm = "ngForm" (ngSubmit)="save(logInForm)">
+  <!-- first-name  -->
+      <div class="mb-3">
+        <label for="id1" class="form-label fw-bolder" >First Name</label>
+        <input type="text" class="form-control mb-1" id="id1" name="fName" ngModel pattern="[a-zA-Z]{2,10}" minlength="2" required #fName="ngModel" placeholder="Enter your first name">
+  
+        <div class="row" *ngIf="fName.invalid && fName.touched">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="fName.errors?.['pattern']">Please Enter the Valid Name</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="fName.errors?.['minlength']">Minimum 2 Characters are Required</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="fName.errors?.['required']">This field is Required</div>
+        </div>
+  
+        <div *ngIf="fName.valid && fName.dirty">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- last-name  -->
+      <div class="mb-3">
+        <label for="id2" class="form-label fw-bolder">Last Name</label>
+        <input type="text" class="form-control" id="id2" name="lName" ngModel pattern="[a-zA-Z]{2,10}" minlength="2" required #lName="ngModel" placeholder="Enter your last name">
+  
+        <div class="row" *ngIf="lName.invalid && lName.touched">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="lName.errors?.['pattern']">Please Enter Valid Name</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="lName.errors?.['minlength']">Minimum 2 Characters are required</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="lName.errors?.['required']">This field is Required</div>
+        </div>
+  
+        <div class="row" *ngIf="lName.valid && lName.dirty">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- age  -->
+      <div class="mb-3">
+        <label for="id3" class="form-label fw-bolder">Age</label>
+        <input type="text" class="form-control" id="id3" name="age" ngModel pattern="[0-9]{2}" minlength="1" #age="ngModel" placeholder="Enter your age">
+  
+        <div class="row" *ngIf="age.invalid">
+          <div class="invalid-feedback d-block" *ngIf="age.errors?.['pattern']">Enter a Valid Age</div>
+        </div>
+  
+        <div class="row" *ngIf="age.valid && age.dirty">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- date-of-Birth  -->
+      <div class="mb-3">
+        <label for="id4" class="form-label fw-bolder">Date of Birth</label>
+        <input type="text" class="form-control" id="id4" name="dob" ngModel pattern="(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/([0-9]{4})"  #dob="ngModel" placeholder="dd/mm/yyyy">
+  
+        <div class="row" *ngIf="dob.touched && dob.invalid">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="dob.errors?.['pattern']">Enter a valid Date</div>
+        </div>
+  
+        <div class="row" *ngIf="dob.valid && dob.dirty">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- Email  -->
+      <div class="mb-3">
+        <label for="id5" class="form-label fw-bolder">Email</label>
+        <input type="text" class="form-control" id="id5" name="email" ngModel pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required #email = 'ngModel' placeholder="eg.test@gmail.com">
+  
+        <div class="row" *ngIf="email.invalid && email.touched">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="email.errors?.['pattern']">Enter a Valid Email</div>
+        </div>
+  
+        <div class="row" *ngIf="email.valid && email.dirty">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- mobile-number  -->
+      <div class="mb-3">
+        <label for="id6" class="form-label fw-bolder">Mobile Number</label>
+        <input type="text" class="form-control" id="id6" name="mobileNo" ngModel required pattern="[0-9]{10}" minlength="10"  #mobileNo="ngModel" placeholder="Enter you 10 Digit Mobile Number">
+  
+        <div class="row" *ngIf="mobileNo.touched && mobileNo.invalid">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="mobileNo.errors?.['pattern']">Enter a Valid 10 Digit Mobile Number</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="mobileNo.errors?.['required']">Mobile number is required</div>
+        </div>
+  
+          <div class="row" *ngIf="mobileNo.valid && mobileNo.dirty">
+            <div class="valid-feedback d-block fw-bold">Perfect!</div>
+          </div>
+      </div>
+  <!-- password  -->
+      <div class="mb-3">
+        <label for="id7" class="form-label fw-bolder">Password</label>
+        <input type="password" class="form-control" id="id7" name="pwd" ngModel pattern="[a-zA-Z0-9]{10}" required #password="ngModel" minlength="4" placeholder="eg.pass123">
+  
+        <div class="row" *ngIf="password.touched && password.invalid">
+          <div class="invalid-feedback d-block fw-bold" *ngIf="password.errors?.['pattern']">password Must contain alphanumeric characters</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="password.errors?.['required']">This field is required</div>
+          <div class="invalid-feedback d-block fw-bold" *ngIf="password.errors?.['minlength']">Password must contain min 4 characters</div>
+        </div>
+  
+        <div class="row" *ngIf="password.valid && password.touched">
+          <div class="valid-feedback d-block fw-bold">Perfect!</div>
+        </div>
+      </div>
+  <!-- checkbox  -->
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" name="check" id="id8" ngModel required >
+        <label class="form-check-label text-capitalize fw-bold" for="id8">By filling this form you will accept our Terms and Conditions</label>
+      </div>
+  <!-- button  -->
+      <button type="submit" class="btn btn-primary fw-bold" [disabled]="logInForm.invalid">Submit</button>
+  
+    </form>
+  
+  </div>

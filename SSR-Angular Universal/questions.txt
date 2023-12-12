@@ -1,0 +1,48 @@
+When interviewing for a position that involves server-side rendering (SSR) in Angular or a related technology stack, you can expect a variety of technical and conceptual questions to assess your understanding and experience with SSR. Here are some common questions that interviewers might ask:
+
+1. **What is Server-Side Rendering (SSR)?**
+   - Explain the concept of SSR and how it differs from client-side rendering.
+
+2. **Why is SSR Important?**
+   - Discuss the advantages of SSR, including benefits for SEO, performance, and user experience.
+
+3. **How does SSR Work in Angular?**
+   - Describe the general process of implementing SSR in an Angular application, including the role of Angular Universal.
+
+4. **What Are the Steps to Implement SSR in Angular?**
+   - Outline the high-level steps involved in setting up SSR in an Angular project.
+
+5. **What Are the Challenges of SSR in Angular?**
+   - Discuss potential challenges or limitations when implementing SSR in Angular applications and how to address them.
+
+6. **How Does Angular Universal Handle Routing in SSR?**
+   - Explain how Angular Universal manages routing on the server side and on the client side.
+
+7. **What Are the Key Performance Considerations for SSR?**
+   - Discuss performance-related considerations and optimizations specific to SSR in Angular.
+
+8. **What Are Some Use Cases for SSR in Angular?**
+   - Provide examples of scenarios where SSR in Angular is particularly beneficial.
+
+9. **How Do You Handle Data Fetching in SSR?**
+   - Explain strategies for fetching data on the server during SSR and passing it to the client.
+
+10. **What Is "Hydration" in SSR, and Why Is It Important?**
+    - Define the concept of hydration and its role in SSR, especially in Angular.
+
+11. **What Are the Differences Between Client-Side and Server-Side Routing?**
+    - Compare client-side routing and server-side routing in the context of SSR.
+
+12. **What Tools or Libraries Are Commonly Used with Angular Universal for SSR?**
+    - Mention common libraries or tools used alongside Angular Universal for SSR.
+
+13. **How Does SSR Impact SEO?**
+    - Explain how SSR can improve search engine optimization and what steps are necessary for SEO optimization.
+
+14. **Have You Faced Any SSR-Specific Challenges in Previous Projects?**
+    - Share any real-world challenges or issues you've encountered while working on SSR projects and how you addressed them.
+
+15. **Can You Describe a Project Where You Implemented SSR in Angular?**
+    - Provide details about a specific project where you applied SSR in Angular, including the outcomes and any lessons learned.
+
+These questions cover a range of topics related to SSR in Angular, from its fundamental concepts to practical implementation and optimization considerations. Be prepared to discuss your experience with SSR projects, demonstrate your understanding of the technology, and showcase your problem-solving skills when addressing SSR-related challenges.

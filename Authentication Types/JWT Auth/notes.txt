@@ -1,0 +1,8 @@
+Backend Setup:
+Ensure your backend server is capable of generating and validating JWTs. This often involves using libraries or frameworks like Node.js with Express, Django, or Spring Boot, which have JWT support.
+
+User Registration and Login:
+Implement user registration and login functionality on your server. When a user successfully logs in, generate a JWT token containing user information (e.g., user ID) and sign it with a secret key.
+
+Angular Setup:
+In your Angular application, you'll need to use HTTP interceptors to include the JWT token in requests and handle token expiration. Here's a step-by-step guide on how to do it:

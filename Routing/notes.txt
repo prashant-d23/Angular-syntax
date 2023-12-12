@@ -1,0 +1,104 @@
+The `ActivatedRoute` and `Router` services in Angular provide a wide range of methods and properties for working with routes and route parameters. Here's an overview of some of the most commonly used methods and properties for each service:
+
+### ActivatedRoute Methods and Properties:
+
+1. **snapshot**: A property that provides a snapshot of the current route information.
+
+   ```typescript
+   route.snapshot.params; // Access route parameters
+   route.snapshot.queryParams; // Access query parameters
+   route.snapshot.url; // Access the URL segments
+   ```
+
+2. **paramMap**: A property that provides an observable of the route parameters.
+
+   ```typescript
+   route.paramMap.subscribe((params) => {
+     // Access route parameters using paramMap
+     const id = params.get('id');
+   });
+   ```
+
+3. **queryParamMap**: A property that provides an observable of the query parameters.
+
+   ```typescript
+   route.queryParamMap.subscribe((queryParams) => {
+     // Access query parameters using queryParamMap
+     const page = queryParams.get('page');
+   });
+   ```
+
+4. **data**: A property that allows you to access data associated with the route.
+
+   ```typescript
+   route.data.subscribe((data) => {
+     // Access data associated with the route
+     const title = data.title;
+   });
+   ```
+
+5. **paramMap.pipe()**: A method for transforming and observing changes to route parameters.
+
+   ```typescript
+   route.paramMap.pipe(
+     map((params) => params.get('id')),
+     filter((id) => !!id)
+   ).subscribe((id) => {
+     // Handle the transformed parameter
+   });
+   ```
+
+### Router Methods and Properties:
+
+1. **navigate()**: A method for programmatically navigating to a different route.
+
+   ```typescript
+   router.navigate(['/products', productId]);
+   ```
+
+2. **navigateByUrl()**: A method for navigating to a route by specifying a URL.
+
+   ```typescript
+   router.navigateByUrl('/products/123');
+   ```
+
+3. **navigateForward()** and **navigateBack()**: Methods for navigating forward and backward in the browser's history.
+
+   ```typescript
+   router.navigateForward('/next-page');
+   router.navigateBack('/previous-page');
+   ```
+
+4. **events**: An observable property that provides information about navigation events.
+
+   ```typescript
+   router.events.subscribe((event) => {
+     // Handle navigation events (e.g., NavigationStart, NavigationEnd)
+   });
+   ```
+
+5. **createUrlTree()**: A method for constructing a URL tree without navigating.
+
+   ```typescript
+   const urlTree = router.createUrlTree(['/products', productId]);
+   ```
+
+6. **createUrl()**: A method for constructing a URL string without navigating.
+
+   ```typescript
+   const url = router.serializeUrl(router.createUrlTree(['/products', productId]));
+   ```
+
+7. **isActive()**: A method for checking if a route is currently active.
+
+   ```typescript
+   const isActive = router.isActive('/products', true); // Use 'true' for exact match
+   ```
+
+8. **parseUrl()**: A method for parsing a URL string into a URL tree.
+
+   ```typescript
+   const urlTree = router.parseUrl('/products/123');
+   ```
+
+These are some of the commonly used methods and properties of the `ActivatedRoute` and `Router` services in Angular. They allow you to work with routes, route parameters, and navigation in your Angular application.

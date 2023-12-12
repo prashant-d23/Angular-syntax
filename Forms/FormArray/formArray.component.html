@@ -1,0 +1,19 @@
+<div class="container border mt-5 bg-warning bg-opacity-50 p-3">
+
+    <form [formGroup]="skillForm">
+      <div formArrayName="skills">
+        <div *ngFor="let skillControl of skills.controls; let i = index">
+          <label for="skill" class="form-label">Skills</label>
+          <input [formControlName]="i" placeholder="Skill {{ i + 1 }}" class="form-control">
+          <button type="button" class="btn btn-danger d-inline my-2" (click)="removeSkill(i)">Remove Skill</button>
+        </div>
+      </div>
+      <button type="button" (click)="addSkill()" class="btn btn-secondary">Add Skill</button>
+    </form>
+  </div>
+  
+  
+  
+  
+  
+  

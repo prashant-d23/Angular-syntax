@@ -1,0 +1,15 @@
+<div>
+    <h1>Main Content</h1>
+    <router-outlet></router-outlet> <!-- Default outlet -->
+  </div>
+  
+  <div>
+    <h2>Secondary Content</h2>
+    <router-outlet name="secondaryOutlet"></router-outlet> <!-- Named outlet -->
+  </div>
+
+
+  <a routerLink = '/home'>Home</a>
+  <a [routerLink]="['/products',elem.id]">router with Path param</a> //path param 
+  <a [routerLink]="['/services']" [queryParam]="{'id' : elem.id,'pass' : elem.pwd}"></a>
+  

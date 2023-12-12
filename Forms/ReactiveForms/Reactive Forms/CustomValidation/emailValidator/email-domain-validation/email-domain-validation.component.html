@@ -1,0 +1,71 @@
+<div class="container mt-4 border p-4 bg-warning">
+  <form [formGroup] = 'emailValidation' (ngSubmit)="saveForm()">
+    <div class="row mt-3">
+
+      <div class="col-md-6">
+        <label for="fName" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="fname" id="fName" formControlName="firstName">
+
+        <div class="row" *ngIf="firstName?.invalid &&  firstName?.touched">
+          <div class="invalid-feedback d-block" *ngIf="firstName?.errors?.['required']">First name is required</div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="lName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lname" id="lName" formControlName="lastName">
+
+        <div class="row" *ngIf="lastName?.invalid && lastName?.touched">
+          <div class="invalid-feedback d-block" *ngIf="lastName?.errors?.['required']">Last name is required</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" formControlName="email">
+
+          <div class="row mt-3" *ngIf="email?.invalid && email?.dirty">
+            <div class="invalid-feedback d-block" *ngIf="email?.errors?.['invalidDomain']">Enter a valid gmail</div>
+            <div class="invalid-feedback d-block" *ngIf="email?.errors?.['required']">This field is required</div>
+            <div class="invalid-feedback d-block" *ngIf="email?.errors?.['pattern']">Enter a Valid gmail</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="col-md-6">
+          <label for="password" class="form-label">Password</label>
+          <input type="text" class="form-control" name="pwd" id="password" formControlName="password">
+
+          <div class="row" *ngIf="password?.invalid && password?.touched">
+            <div class="invalid-feedback d-block" *ngIf="password?.errors?.['required']">Password is required</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="confirmPwd" class="form-label">Confirm Password</label>
+          <input type="text" class="form-control" name="pwd" id="confirmPwd" formControlName="confirmPassword">
+
+          <div class="row" *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+            <div class="invalid-feedback d-block" *ngIf="confirmPassword?.errors?.['required']">Enter Password First</div>
+            <div class="invalid-feedback d-block" *ngIf="confirmPassword?.errors?.['passwordMismatch']">Password not matched</div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <button type="submit" class="btn btn-primary mt-3 mx-3" [disabled]="emailValidation.invalid">Sign Up</button>
+
+    <button type="button" class="btn btn-success mt-3 mx-3" (click)="getData()">Get Data</button>
+    <button type="button" class="btn btn-success mt-3 mx-3" (click)="patchData()">Patch Data</button>
+    <button type="button" class="btn btn-danger mt-3 mx-3" (click)="reset()">Reset</button>
+
+  </form>
+</div>
+
